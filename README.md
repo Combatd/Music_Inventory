@@ -17,4 +17,5 @@ This inventory system application will let record labels track their Bands, Albu
 
 ```users``` table:  store an email, password_digest and session_token. Add database constraints (require all fields), and indices to ensure uniqueness of emails and speed up the lookup by session_token.
 
-* Write methods to deal with the session token: ```User::generate_session_token```, ```User#reset_session_token!``` and ```User#ensure_session_token```.
+* Methods to deal with the session token: ```User::generate_session_token```, ```User#reset_session_token!``` and ```User#ensure_session_token```.
+* ```User#password=(password)``` method which actually sets the ```password_digest``` attribute using BCrypt, and a ```User#is_password?(password)``` method to check the users' password when they log in
