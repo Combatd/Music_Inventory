@@ -50,3 +50,24 @@ new_session GET    /session/new(.:format)                 sessions#new
 ```
 
 I will create login/signup views and edit ```application.html.erb``` layout so that a logged in user is displayed a "sign-out" button and a logged-out user is displayed links to sign-up or sign-in pages. After that, it will be time to add some styling!
+
+### License Information
+
+```
+    Music Inventory - Inventory System for Record Labels
+    Copyright (C) 2020  Mark Calvelo
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+```
