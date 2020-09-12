@@ -13,3 +13,7 @@ class User < ApplicationRecord
     attr_reader :password # password getter method
 
     # after_initialize :ensure_session_token
+
+    def self.generate_session_token
+        SecureRandom::urlsafe_base64(16)
+    end
