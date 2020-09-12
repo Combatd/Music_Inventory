@@ -20,6 +20,11 @@ class User < ApplicationRecord
         self.session_token # return the session token
     end
 
+    def password=(password) # set password
+        @password = password
+        self.password_digest = BCrypt::Password.create(@password)
+    end
+
     private
 
     def self.generate_session_token
