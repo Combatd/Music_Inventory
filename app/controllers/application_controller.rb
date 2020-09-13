@@ -12,4 +12,9 @@ class ApplicationController < ActionController::Base
         current_user.reset_session_token!
         session[:session_token] = nil
     end
+
+    def current_user
+        return nil if !session[:session_token]
+        @current_user ||= User.find_by(session_token: session[:session_token]) # find user session if nil value for current_user
+    end
 end
