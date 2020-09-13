@@ -17,4 +17,9 @@ class ApplicationController < ActionController::Base
         return nil if !session[:session_token]
         @current_user ||= User.find_by(session_token: session[:session_token]) # find user session if nil value for current_user
     end
+
+    def logged_in?
+        return false if !current_user
+        true # returns true if current_user is truthy
+    end
 end
