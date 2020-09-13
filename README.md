@@ -4,7 +4,7 @@ This inventory system application will let record labels track their Bands, Albu
 
 ## Learning Goals
 
-* Be able to build User Auth without looking at old code or demos
+* Be able to build User Authorization
 * Know how to nest routes
 * Be able to link between different views using a tags and rails URL helpers
 * Be able to trigger controller actions from views using forms and links
@@ -50,6 +50,12 @@ new_session GET    /session/new(.:format)                 sessions#new
 ```
 
 I will create login/signup views and edit ```application.html.erb``` layout so that a logged in user is displayed a "sign-out" button and a logged-out user is displayed links to sign-up or sign-in pages. After that, it will be time to add some styling!
+
+### Basic Styling
+* I will need a header with the title of the Music Inventory Application with a cool font in my ```application.html.erb```
+* ```flex``` in CSS should display logged-in/logged-out status on the right side of my header.
+* I should make my ```<a>``` elements look more like buttons, which usually involves changing ```background_color``` and ```border-radius```.
+* I need to have proper spacing and line alignment for my session forms.
 
 ### License Information
 
