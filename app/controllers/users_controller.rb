@@ -2,7 +2,17 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        render json: @user
+        render :new # Page for creating new User
+    end
+
+    def create
+        @user = User.new(user_params) # created user
+        if @user.save
+            redirect_to root_url
+        else
+            flash.new[:errors] = @user.errors.full_messages
+            render :new # Page for creating new user
+        end
     end
 
     private # hidden encapsulated data methods
