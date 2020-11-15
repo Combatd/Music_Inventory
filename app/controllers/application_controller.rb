@@ -22,4 +22,10 @@ class ApplicationController < ActionController::Base
         return false if !current_user
         true # returns true if current_user is truthy
     end
+
+    # Redirect user if already signed in
+    # def already_signed_in
+    #     redirect_to bands_url if current_user
+    # end
+
 end
