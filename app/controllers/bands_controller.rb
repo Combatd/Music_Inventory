@@ -5,6 +5,11 @@ class BandsController < ApplicationController
         render :index
     end
 
+    def new
+        @band = Band.new
+        render :new
+    end
+
     def create
         @band = Band.new(band_params)
 
