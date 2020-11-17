@@ -83,6 +83,7 @@ band      GET    /bands/:id(.:format)                   bands#show
           PUT    /bands/:id(.:format)                   bands#update
           DELETE /bands/:id(.:format)                   bands#destroy
 ```
+* I can create a reusable form template ```_form.html.erb``` for the different pages rendered by ```BandsController```. Depending on the ```BandController``` action, a ternary operator checking [band.persisted?](https://api.rubyonrails.org/classes/ActiveRecord/Persistence.html#method-i-persisted-3F) will change the form's action and method override to the correct URL path and HTTP Request method.
 
 
 
