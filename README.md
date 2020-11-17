@@ -49,13 +49,42 @@ new_session GET    /session/new(.:format)                 sessions#new
        user GET    /users/:id(.:format)                   users#show
 ```
 
-I will create login/signup views and edit ```application.html.erb``` layout so that a logged in user is displayed a "sign-out" button and a logged-out user is displayed links to sign-up or sign-in pages. After that, it will be time to add some styling!
+I will create login/signup views and edit ```application.html.erb``` layout so that a logged in user is displayed a "sign-out" button and a logged-out user is displayed links to sign-up or sign-in pages. 
+After that, it will be time to add some styling!
 
 ### Basic Styling
 * I will need a header with the title of the Music Inventory Application with a cool font in my ```application.html.erb```
 * ```flex``` in CSS should display logged-in/logged-out status on the right side of my header.
 * I should make my ```<a>``` elements look more like buttons, which usually involves changing ```background_color``` and ```border-radius```.
 * I need to have proper spacing and line alignment for my session forms.
+
+## Phase 1: Bands, Albums, and Tracks
+We cannot fully implement ```user``` features without building out core features of our inventory system.
+
+When following the Model View Controller Software Architecture, it is best to build out one set of features and resources at a time.
+
+* Database Migrations (Schema)
+* Model definition (Ruby class with validations, associations, and helper methods)
+* Routes (URL Path)
+* Controllers Actions (Business Logic)
+* Views (User Interface should match up with Controller Actions rendering them)
+
+### Bands
+* In the Migration ```CreateBands```, I will create a bands table with a name (required) column with server timestamps.
+* I will create a ```Band``` model with a validation to ensure name is not null (value actually exists).
+* Representational State Transfer REST API:
+```
+bands     GET    /bands(.:format)                       bands#index
+          POST   /bands(.:format)                       bands#create
+new_band  GET    /bands/new(.:format)                   bands#new
+edit_band GET    /bands/:id/edit(.:format)              bands#edit
+band      GET    /bands/:id(.:format)                   bands#show
+          PATCH  /bands/:id(.:format)                   bands#update
+          PUT    /bands/:id(.:format)                   bands#update
+          DELETE /bands/:id(.:format)                   bands#destroy
+```
+
+
 
 ### License Information
 
