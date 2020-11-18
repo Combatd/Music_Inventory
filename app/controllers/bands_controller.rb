@@ -21,6 +21,11 @@ class BandsController < ApplicationController
         end
     end
 
+    def show
+        @band = Band.find(params[:id])
+        render :show
+    end
+
     private # hidden encapsulated data
 
     def band_params
