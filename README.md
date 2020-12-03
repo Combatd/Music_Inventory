@@ -87,6 +87,28 @@ band      GET    /bands/:id(.:format)                   bands#show
 * For each ```BandsController``` action, I will first write the action, test it, then create the ```html.erb``` view that will be rendered.
 * ```config.action_controller.default_protect_from_forgery = false``` would disable the CSRF Protection in ```config/application.rb```, which is meant to prevent phishing from fraudlent or fake copy sites. After testing the API endpoints manually one by one, we will need to re-enable CSRF protection before production!
 
+### Albums
+I will follow the same design pattern as previously used with ```Bands```, starting with the database migration.
+
+Album Model:
+* Not be called Record, because it will conflict with ActiveRecord's ```record_id```.
+* ```belongs_to``` a ```band```, which will need a ```has_many``` association to ```band```
+* Contains a ```title``` and ```year```
+* States whether it is a ```live``` or ```studio``` album
+    * Boolean with a default value
+* Representational State Transfer REST API:
+
+```
+new_band_album GET    /bands/:band_id/albums/new(.:format)   albums#new
+        albums POST   /albums(.:format)                      albums#create
+    edit_album GET    /albums/:id/edit(.:format)             albums#edit
+         album GET    /albums/:id(.:format)                  albums#show
+               PATCH  /albums/:id(.:format)                  albums#update
+               PUT    /albums/:id(.:format)                  albums#update
+               DELETE /albums/:id(.:format)                  albums#destroy
+```
+
+
 
 ### License Information
 
