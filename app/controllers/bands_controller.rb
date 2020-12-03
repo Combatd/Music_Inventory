@@ -36,6 +36,13 @@ class BandsController < ApplicationController
         end
     end
 
+    def destroy
+        @band = Band.find(params[:id])
+        @band.destroy
+
+        redirect_to bands_path
+    end
+
     private # hidden encapsulated data
 
     def band_params
