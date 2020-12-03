@@ -1,6 +1,9 @@
 class AlbumsController < ApplicationController
     # albums is nested in bands - no index action
-
+    def show
+      @album = Album.find(params[:id])
+      render :show
+    end
 
     private # hidden encapsulated data
 
