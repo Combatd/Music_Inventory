@@ -9,6 +9,6 @@ class CreateAlbums < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    add_index :albums [:band_id, :title], unique: true
+    add_index :albums, [:band_id, :title], unique: true
   end
 end
