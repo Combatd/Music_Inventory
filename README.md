@@ -84,7 +84,8 @@ band      GET    /bands/:id(.:format)                   bands#show
           DELETE /bands/:id(.:format)                   bands#destroy
 ```
 * I can create a reusable form template ```_form.html.erb``` for the different pages rendered by ```BandsController```. Depending on the ```BandController``` action, a ternary operator checking [band.persisted?](https://api.rubyonrails.org/classes/ActiveRecord/Persistence.html#method-i-persisted-3F) will change the form's action and method override to the correct URL path and HTTP Request method.
-
+* For each ```BandsController``` action, I will first write the action, test it, then create the ```html.erb``` view that will be rendered.
+* ```config.action_controller.default_protect_from_forgery = false``` would disable the CSRF Protection in ```config/application.rb```, which is meant to prevent phishing from fraudlent or fake copy sites. After testing the API endpoints manually one by one, we will need to re-enable CSRF protection before production!
 
 
 ### License Information
