@@ -5,9 +5,15 @@ class AlbumsController < ApplicationController
       render :show
     end
 
+    def new
+      @album = Album.new(band_id: params[:band_id]) 
+      @band = Band.find(params[:band_id])
+      render :new
+    end
+
     private # hidden encapsulated data
 
-   def album_params
-    params.require(:album).permit(:title, :year, :band_id, :live!)
-   end 
+    def album_params
+      params.require(:album).permit(:title, :year, :band_id, :live!)
+    end 
 end
