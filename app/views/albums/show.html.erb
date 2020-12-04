@@ -1,0 +1,22 @@
+<h2> <%= @album.title %></h2>
+<h3> <%= @band.name %></h3>
+<h4>Recording Year: <%= @album.year %> </h4>
+
+<%= link_to "View Band " + @band.name, band_path(@band) %>
+
+<div class="info-list">
+    <h2>Available Tracks</h2>
+    <ul>
+        <li>Any track that belongs to the album will be listed here!</li>
+    </ul>
+
+</div>
+
+  
+
+
+
+<div>
+    <%= link_to 'Edit Album', edit_album_path(@album), class: "button" %>
+    <%= link_to 'Delete Album', album_path(@album), method: :delete, class: "button" %>
+</div>
