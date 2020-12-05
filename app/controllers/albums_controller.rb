@@ -23,6 +23,11 @@ class AlbumsController < ApplicationController
         end
     end
 
+    def edit
+        @album = Album.find(params[:id])
+        render :edit
+    end
+
     private # hidden encapsulated data
 
     def album_params
