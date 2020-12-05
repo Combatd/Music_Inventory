@@ -11,6 +11,18 @@ class AlbumsController < ApplicationController
       render :new
     end
 
+    def create
+        @album = Album.new(album_params)
+
+        if @album.save
+            redirect_to album_url(@album)
+        else
+            @band = @album.band
+            flash.now[:errors] = @album.errors.full_messages
+            render :new
+        end
+    end
+
     private # hidden encapsulated data
 
     def album_params
