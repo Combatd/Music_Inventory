@@ -28,6 +28,15 @@ class AlbumsController < ApplicationController
         render :edit
     end
 
+    def update
+        @album = Album.find(params[:id])
+        if @album.update_attributes(album_params)
+            redirect_to album_url(@album)
+        else
+            render :edit
+        end
+    end
+
     private # hidden encapsulated data
 
     def album_params
