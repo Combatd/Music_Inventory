@@ -22,8 +22,8 @@
         <% Band.all.each do |band| %>
             <option 
                 <%= "selected" if album.band_id === band.id %> 
-                value="<% band.id %>">
-                <%= band.name%>
+                value="<%= band.id %>">
+                <%= band.name %>
             </option>
         <% end %>
     </select>
