@@ -25,7 +25,7 @@ This inventory system application will let record labels track their Bands, Albu
 * I need a ```User::find_by_credentials(email, password)``` method.
 
 I will next need a ```UsersController``` and ```SessionsController```.
-* I need methods on ```UsersController```` to allow new users to sign up.
+* I need methods on ```UsersController``` to allow new users to sign up.
     * They will be immediately logged in after signing up!
 
 * The ```SessionsController``` handles all Authorization actions, so I won't make a model for this.
