@@ -46,6 +46,6 @@ class AlbumsController < ApplicationController
     private # hidden encapsulated data
 
     def album_params
-      params.require(:album).permit(:title, :year, :band_id, :live!)
+      params.require(:album).permit(:title, :year, :band_id, :live)
     end 
 end
