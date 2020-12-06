@@ -2,12 +2,14 @@ class AlbumsController < ApplicationController
     # albums is nested in bands - no index action
     def show
       @album = Album.find(params[:id])
+      @band = @album.band
       render :show
     end
 
     def new
       @album = Album.new(band_id: params[:band_id]) 
       @band = Band.find(params[:band_id])
+      @bands = Band.all
       render :new
     end
 
@@ -25,6 +27,8 @@ class AlbumsController < ApplicationController
 
     def edit
         @album = Album.find(params[:id])
+        @band = @album.band
+        @bands = Band.all
         render :edit
     end
 
