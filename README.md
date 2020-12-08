@@ -108,7 +108,8 @@ new_band_album GET    /bands/:band_id/albums/new(.:format)   albums#new
                DELETE /albums/:id(.:format)                  albums#destroy
 ```
 
-
+### Tracks
+The same workflow for ```Bands``` and ```Albums``` will be used for ```Tracks```.
 
 ### License Information
 
