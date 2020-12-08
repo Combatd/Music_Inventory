@@ -115,6 +115,16 @@ The same workflow for ```Bands``` and ```Albums``` will be used for ```Tracks```
 * Belongs to an ```album```, with corresponding model associations to ```Band``` and ```Album```
 * Has properties of string ```title```, ```ord``` integer (track number), and optional text ```lyrics```
 * Boolean property of ```bonus```, with false being a ```regular``` track
+* Representational State Transfer REST API:
+```
+new_album_track GET    /albums/:album_id/tracks/new(.:format) tracks#new
+         tracks POST   /tracks(.:format)                      tracks#create
+     edit_track GET    /tracks/:id/edit(.:format)             tracks#edit
+          track GET    /tracks/:id(.:format)                  tracks#show
+                PATCH  /tracks/:id(.:format)                  tracks#update
+                PUT    /tracks/:id(.:format)                  tracks#update
+                DELETE /tracks/:id(.:format)                  tracks#destroy
+```
 
 ### License Information
 
