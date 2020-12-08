@@ -1,10 +1,10 @@
 class TracksController < ApplicationController
-    before_action :require_log_in!
+    # before_action :require_log_in! will be needed later
 
     def new
         @album = Album.find(params[:album_id])
-        @band = Band.find(params[@album.band_id]
-        @track = Track.new(album_id: params[:album_id]))
+        @band = Band.find(params[@album.band_id])
+        @track = Track.new(album_id: params[:album_id])
         render :new
     end
 
