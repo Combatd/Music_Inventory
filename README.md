@@ -111,6 +111,11 @@ new_band_album GET    /bands/:band_id/albums/new(.:format)   albums#new
 ### Tracks
 The same workflow for ```Bands``` and ```Albums``` will be used for ```Tracks```.
 
+```Track``` Model:
+* Belongs to an ```album```, with corresponding model associations to ```Band``` and ```Album```
+* Has properties of string ```title```, ```ord``` integer (track number), and optional text ```lyrics```
+* Boolean property of ```bonus```, with false being a ```regular``` track
+
 ### License Information
 
 ```
