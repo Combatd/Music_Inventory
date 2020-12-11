@@ -29,6 +29,9 @@
         id="track_regular" 
         value="f"
         <%= "checked" if !track.bonus %>>
+    
+    <label for="track_ord">Ord</label>
+    <input type="number" name="track[ord]" id="track_ord" min="1" value="<%= track.ord %>">
 
     <label for="track_album">Album</label>
     <select name="track[album_id]" id="track_album">
