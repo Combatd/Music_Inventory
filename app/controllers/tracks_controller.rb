@@ -19,6 +19,11 @@ class TracksController < ApplicationController
         end
     end
 
+    def edit
+        @track = Track.find(params[:id])
+        render :edit
+    end
+
     private # hidden encapsulated data
 
     def track_params
